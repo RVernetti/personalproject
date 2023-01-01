@@ -1,6 +1,3 @@
-import { Organism } from "../anatomy/organism"
-import GameScene from "../scenes/GameScene"
-
 export class Tile {
     constructor(){
         this.sprite = 'hex'
