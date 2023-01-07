@@ -1,3 +1,4 @@
 export interface Coordinates {
-  [index: string]: number
+  x: number,
+  y: number,
 }
