@@ -3,15 +3,10 @@ import { styled } from '../../../stitches.config'
 const Button = styled('button', {
   height: '50px',
   width: '50px',
-  borderRadius: '1000px',
-  // fontSize: '13px',
-  // padding: '5px 10px',
-  border: '1px solid black',
   fontFamily: '$system',
   transition: '0.5s',
   '&:hover': {
     cursor: 'pointer',
-    borderColor: 'red',
   },
   variants: {
     size: {
@@ -28,6 +23,9 @@ const Button = styled('button', {
     },
     colors: {
       default: {
+        fontSize: '13px',
+        padding: '5px 10px',  
+        borderRadius: '8px',    
         backgroundColor: '$primary500',
         color: 'white',
         '&:hover': {
@@ -37,6 +35,11 @@ const Button = styled('button', {
       },
       tile: {
         backgroundColor: 'transparent',
+        boxShadow: '0px 0px 24px rgba(0, 0, 0, 0.05)',
+        border: 0,
+        '&:hover': {
+          backgroundColor: 'LightCyan',
+        },      
       }
     },
     border: {
