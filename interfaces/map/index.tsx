@@ -10,4 +10,4 @@ export interface CubicCoordinates {
   s: number,
 }
 
-export interface positionsGrid extends Array<CubicCoordinates> {}
+export interface Positions extends Array<CubicCoordinates> {}

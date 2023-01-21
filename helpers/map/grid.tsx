@@ -5,7 +5,7 @@ import { Hex } from './old/hex'
  * @param radius - The grid radius from the origin [0,0,0] to the border
  * @returns {array} The circular grid of hexagonal coordinates
  */
-const generateCircularGrid = (radius: number) => {
+const generateGrid = (radius: number) => {
     let grid = []
     for(let q = -radius; q <= radius; ++q){
         for(let r = -radius; r <= radius; ++r){
@@ -19,4 +19,4 @@ const generateCircularGrid = (radius: number) => {
     return grid
 }
 
-export { generateCircularGrid }
+export { generateGrid }

@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Tile } from '../'
 
-import { SquareCoordinates, positionsGrid } from '../../../interfaces/map'
-import { generateCircularGrid } from '../../../helpers/map/grid'
+import { SquareCoordinates, Positions } from '../../../interfaces/map'
+import { generateGrid } from '../../../helpers/map/grid'
 import { Point, Layout, Hex } from '../../../helpers/map/old/hex'
 
 interface Grid {
@@ -20,11 +20,11 @@ const Grid = (props: Grid) => {
   } = props
   
   const layout = new Layout(Layout.flat, hexSize, origin)
-  const grid: positionsGrid = generateCircularGrid(radius)
+  const positions: Positions = generateGrid(radius)
 
   console.log('Layout:', layout)
 
-  const getGrid = () => grid.map((hex) => 
+  const getGrid = () => positions.map((hex) => 
     <Tile 
       key={`[${hex.q}, ${hex.r}, ${hex.s}]`}
       coordinates={hex}
