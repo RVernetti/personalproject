@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Coordinates } from '../../../interfaces/map'
+import { CubicCoordinates } from '../../../interfaces/map'
 
 import Button from '../Button'
 
 interface Tile {
-  position: Coordinates
+  coordinates: CubicCoordinates
+  layout: any // TODO interface
   composition?: Array<any>
   temperature?: number
   sunshine?: number
@@ -14,14 +15,17 @@ interface Tile {
 }
 
 const Tile = (props: Tile) => {
-  const { position, css } = props
+  const { coordinates, layout, css } = props
+
+  const position = layout.hexToPixel(coordinates)
   const { x, y } = position
 
+
   return (
-    <Button 
+    <Button
       border='tile' 
       colors='tile' 
-      onClick={() => console.log('Tile\'s position:', position)} 
+      onClick={() => console.log('Tile\'s coordinates:', coordinates)} 
       css={{ 
         position: 'absolute',
         height: '50px',

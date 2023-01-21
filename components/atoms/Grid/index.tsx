@@ -1,17 +1,41 @@
 import React from 'react'
 
-import { Coordinates } from '../../../interfaces/map'
+import { Tile } from '../'
 
-import Tile from '../Tile'
+import { SquareCoordinates, positionsGrid } from '../../../interfaces/map'
+import { generateCircularGrid } from '../../../helpers/map/grid'
+import { Point, Layout, Hex } from '../../../helpers/map/old/hex'
 
 interface Grid {
-  origin: Coordinates
   radius: number
+  origin?: SquareCoordinates
+  hexSize?: SquareCoordinates
 }
 
 const Grid = (props: Grid) => {
+  const { 
+    radius,
+    origin = new Point(720, 350), 
+    hexSize = new Point(29, 29),
+  } = props
+  
+  const layout = new Layout(Layout.flat, hexSize, origin)
+  const grid: positionsGrid = generateCircularGrid(radius)
+
+  console.log('Layout:', layout)
+
+  const getGrid = () => grid.map((hex) => 
+    <Tile 
+      key={`[${hex.q}, ${hex.r}, ${hex.s}]`}
+      coordinates={hex}
+      layout={layout}
+    />
+  )
+
   return (
-    <Tile position={{ x:500, y: 500 }}/>
+    <>
+      {getGrid()}
+    </>
   )
 }
 
