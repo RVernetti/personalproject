@@ -11,6 +11,7 @@ const Button = styled('button', {
   transition: '0.5s',
   '&:hover': {
     cursor: 'pointer',
+    borderColor: 'red',
   },
   variants: {
     size: {
