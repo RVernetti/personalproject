@@ -35,7 +35,7 @@ const Button = styled('button', {
       },
       tile: {
         backgroundColor: 'transparent',
-        boxShadow: '0px 0px 24px rgba(0, 0, 0, 0.05)',
+        boxShadow: '0px 0px 24px rgba(0, 0, 0, 0.03)',
         border: 0,
         '&:hover': {
           backgroundColor: 'LightCyan',
@@ -44,7 +44,6 @@ const Button = styled('button', {
     },
     border: {
       tile: {
-        border: '1px solid black',
         borderRadius: '1000px',
       },
       form: {
